@@ -1,0 +1,102 @@
+<html>
+ 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="icon" href="#">
+
+  <title>registration</title>
+
+  <style>
+   h1 {
+    font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */ 
+    font-size: 250%; /* Размер шрифта в процентах */ 
+   } 
+   form {
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 20pt; /* Размер шрифта в пунктах */ 
+<p class="mt-5 mb-3 text-muted">© test_ot_elviri</p>
+      }
+body {
+    background: #c7b39b url(5.jpg) no-repeat ; /* Цвет фона и путь к файлу */
+    color: #fff; /* Цвет текста */
+    width:100%;
+	position:relative;
+	    background-size: cover;
+    height: auto;
+
+background: #c7b39b url(5.jpg) no-repeat center;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+       }
+
+  </style>
+  
+ <link href="style2.css" rel="stylesheet"></head>
+<body>
+
+ <h1 align="center" style="color: red;"> <strong> <u> <a href="str1.html"> Регистрация </a> </u> </strong>  </h1>
+<div>
+<form method="LINK" action="test.html">
+  <div class="form-group">
+    <label for="InputName1">Ваше Имя</label>
+    <input type="name" class="form-control" id="InputName1"  placeholder="Введите ваше имя">
+      </div>
+  <div class="form-group">
+    <label for="InputFam1">Ваша Фамилия</label>
+    <input type="text" class="form-control" placeholder="Last name">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Я согласен пройти  этот тест</label>
+  </div>
+
+    <input type="submit" value="Вперед!">
+
+ </form>
+</div>
+
+<p> Можете поискать в яндексе про кошек</p>
+<script type="text/javascript">
+/*юзаем ajax*/
+  /* Данная функция создаёт кроссбраузерный объект XMLHTTP */
+  function getXmlHttp() {
+    var xmlhttp;
+    try {
+      xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+    try {
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    } catch (E) {
+      xmlhttp = false;
+    }
+    }
+    if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
+      xmlhttp = new XMLHttpRequest();
+    }
+    return xmlhttp;
+  }
+  function send() {
+    var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP 
+    xmlhttp.open('POST', 'test.php', true); // Открываем асинхронное соединение
+    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
+    xmlhttp.send("site=" + encodeURIComponent("http://ya.ru/?a=5")); // Отправляем POST-запрос
+    xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
+      if (xmlhttp.readyState == 4) { // Ответ пришёл
+        if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
+          document.getElementById("yandex").innerHTML = xmlhttp.responseText; // Выводим ответ сервера
+        }
+      }
+    };
+  }
+</script>
+<div>
+  <input type="button" value="Найти в яндексе" onclick="send()" />
+  <div id="yandex"></div>
+</div>
+
+<script type="text/javascript" src="main.js"></script></body>
+</html>

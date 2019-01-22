@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	
+<meta charset="UTF-8">
+
+	<title>registration</title>
+
+<style> html { 
+background: url(Снимок3.PNG) center;
+background-color:#c7b39b;
+    color: #fff; /* Цвет текста */
+    width:100%;
+	position:relative;
+	    background-size: cover;
+    height: auto;
+}
+</style>
+	
+
+    <link href="style2.css" rel="stylesheet"></head></head>
+
+<body>
+ 
+ 
+    <div id="login-form">
+
+      <h1 align="center" > <strong> <u> <a href="str1.html">РЕГИСТРАЦИЯ </a> </u> </strong></h1>
+
+        <fieldset>
+
+            <form action="test.html">
+                <input type="name" class="form-control" id="InputName1"  placeholder="Введите ваше имя">
+ 
+                <input type="text" class="form-control" placeholder="Введите вашу фамилию">
+ 
+                <input type="submit" value="ВОЙТИ">
+
+            </form>
+
+        </fieldset>
+
+    
+    <p> Можете поискать в яндексе про кошек</p>
+<script type="text/javascript">
+/*юзаем ajax*/
+  /* Данная функция создаёт кроссбраузерный объект XMLHTTP */
+  function getXmlHttp() {
+    var xmlhttp;
+    try {
+      xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+    } catch (e) {
+    try {
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    } catch (E) {
+      xmlhttp = false;
+    }
+    }
+    if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
+      xmlhttp = new XMLHttpRequest();
+    }
+    return xmlhttp;
+  }
+  function send() {
+    var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP 
+    xmlhttp.open('POST', 'test.php', true); // Открываем асинхронное соединение
+    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
+    xmlhttp.send("site=" + encodeURIComponent("http://ya.ru/?a=5")); // Отправляем POST-запрос
+    xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
+      if (xmlhttp.readyState == 4) { // Ответ пришёл
+        if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
+          document.getElementById("yandex").innerHTML = xmlhttp.responseText; // Выводим ответ сервера
+        }
+      }
+    };
+  }
+</script>
+<div>
+  <input type="button" value="Найти в яндексе" onclick="send()" />
+  <div id="yandex"></div>
+</div>
+</div>
+
+<script type="text/javascript" src="main.js"></script></body>
+
+</html>
